@@ -488,6 +488,10 @@ ifneq ($(KBUILD_SRC),)
 	    $(srctree) $(objtree) $(VERSION) $(PATCHLEVEL)
 endif
 
+PLATFORM_VERSION = 13
+@echo "PLATFORM_VERSION: $(PLATFORM_VERSION)"
+export PLATFORM_VERSION
+
 ifeq ($(cc-name),clang)
 ifneq ($(CROSS_COMPILE),)
 CLANG_TRIPLE	?= $(srctree)/toolchain/clang/host/linux-x86/clang-r349610-jopp/bin/aarch64-linux-gnu-
