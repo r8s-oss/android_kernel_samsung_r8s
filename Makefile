@@ -491,6 +491,12 @@ ifneq ($(KBUILD_SRC),)
 	    $(srctree) $(objtree) $(VERSION) $(PATCHLEVEL)
 endif
 
+ANDROID_VERSION := 110000
+PLATFORM_VERSION := $(shell expr $(ANDROID_VERSION) / 10000)
+@echo "PLATFORM_VERSION: $(PLATFORM_VERSION)"
+export ANDROID_VERSION
+export PLATFORM_VERSION
+
 ifeq ($(cc-name),clang)
 ifneq ($(CROSS_COMPILE),)
 #CLANG_TRIPLE	?= $(CROSS_COMPILE)
